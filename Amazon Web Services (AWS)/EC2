@@ -1,0 +1,59 @@
+(1) How many EC2 instances can I create OR run per region ? 
+20.
+
+(2) What Instance Types are used ?
+
+(3) What is Auto Scaling ?
+
+(4) What is Load Balancing ?
+
+(5) What is Volumes ?
+Creating a Volume it should be with in Availability Zone (AZ).
+using Volume can build Snapshot, Snapshot Lifecycle Manager.
+
+(6) How to create EC2 Instance as like total stuff ?
+creating an AMI.
+EC2 Instance Volume can build Snapshot, Snapshot Lifecycle Manager.
+
+(7) What is Snapshots ?
+from Snapshot creating with Volume, Instance.
+using Snapshot can build Volume, AMI.
+
+(8) What are Elastic IPs ?
+
+(9) What is Lifecycle Manager ?
+
+(10) What is 2/2 check in AWS EC2 Instance ?
+System Status Checks - Loss of network connectivity, Loss of system power, Software issues on the physical host, Hardware issues on the physical host that impact network reachability.
+Instance Status Checks - Failed system status checks, Exhausted memory, Corrupted file system, Incompatible kernel, Incorrect networking or startup configuration.
+
+(11) What is Placement Groups ?
+
+(12) How to change Instance Type for EC2 Instance ?
+Stop the Instance, then Instance Settings -> change Instance Type.
+
+(13) What is Sticky Session in Load Balancer ?
+The same client always redirect to same EC2 Instance behind load balancer.
+The Sticky Session supports CLB & ALB.
+
+(14) What is the difference between Instance Store and EBS Volumes ?
+Instance Store - OS Configuration, Once Instance is stop you cannot persist data.
+EBS Volumes - you can persist data, either Instance is running OR stopped.
+
+(15) Can I mount EBS Volume with multiple EC2 Instances ?
+No, by using EFS can do.
+
+(16) AMI is in specific region, so I want to create EC2 Instance with that AMI in other different region ?
+Yes, using “Copy AMI” option.
+
+(17) What is the difference between AMI and Snapshot ?
+
+(18) What is Spot Requests, Reserved Instances, Dedicated Hosts ?
+
+(19) Can I create like S3 in EC2 Instance ?
+
+(20) Created auto scaling rule when ever load goes more than 60% it should create a new instance currently I have 3 machines A server load is 62%, B server load is 30%, C server load is 30%. Now will auto scaling rule will create a new machine ?
+No, the average load will take from all 3 machines within a Auto Scaling Groups will check 60% Utilization like CPU, Network, Load Balancer.
+
+(21) How to access private subnet EC2 instance from outside ?
+Jump Server / Bastion Server

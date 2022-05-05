@@ -1,0 +1,152 @@
+(1) What is ReplicaSet and ReplicaController ?
+
+(2) What is Liveness Probes, Readiness Probes, Startup Probes ?
+
+(3) What are the types of Services in Kubernetes ?
+ClusterIP - It restricting the service within the cluster. It expose the service within the Kubernetes cluster. 
+NodePort - It will expose the service on a static port on the deployment node. A ClusterIP service to which NodePort service will route is automatically created. The service can be accessed from outside the cluster using the NodeIP:NodePort.
+LoadBalancer - It use cloud providers load balancer.
+
+(4) What is Multi-Containers Pod & Pod can have Multi-Containers ?
+
+(5) Can we deploy a Pod on a Master node ?
+
+(6) Can we deploy a Pod on a particular node ?
+
+(7) What is Init Container and Side-Car Container ?
+
+(8) What is the link between Pod and Service ?
+
+(9) Explain the Architecture of Kubernetes ?
+
+(10) What are StatefulSets in Kubernetes ?
+
+(11) What is default deployment strategie in Kubernetes ?
+Rolling Update.
+
+(12) How to maintain a Kubernetes Pod log files ?
+
+(13) When deploying a pod is getting failed, what was the issue ?
+Image Name, Port No already used, Memory issue of Pod. 
+
+(14) How to monitor pods in kubernetes ?
+
+(15) Is possible to deploy different containers in one pod kubernetes ?
+Yes
+
+(16) Is possible to deploy same containers in one pod kubernetes ?
+No
+
+(17) Have created a Service for 3 replicas of 1 application but now 1 more pod created with a same label, in that case the traffic can be redirected to only those 3 pod or will be consider newly created one more pod also ?
+Yes, the traffic will redirected to 4 pods as well because of the service is keep monitoring the label if any new pod is created with same label the service using a selector that will match to the label.
+
+(18) what the command to fetch the labels of a pod which already existing ?
+kubectl get pods POD_NAME --show-labels
+kubectl get pods --show-labels
+
+(19) Creating a pods, replicasets, deployment but forget to mention the labels in manifest files or through cli ?
+manifest files - metedata -> name: NAME, with that NAME will be created an label automatically. 
+cli - kubectl run NAME --image=IMAGE_NAME:TAG, with that NAME will be created an label automatically.
+
+(20) How to add more labels to existing pod ?
+kubectl label pod POD_NAME key1=valueA key2=valueB key3=valueC
+
+(21) How to overwrite the labels to existing pod ?
+kubectl label pod POD_NAME key2=valueXYZ --overwrite
+
+(22) How to remove the labels to existing pod ?
+kubectl label pod POD_NAME -l key1-
+
+(23) What is Annotations vs Labels ?
+Annotations - used to integrate with external purpose inside a cluster.
+Labels - used to integrate with internal purpose inside a cluster.
+
+(24) What are Types of Selectors ?
+● equality-based - Equality OR Inequality-based requirements allow filtering by label keys and values. Three kinds of operators are admitted =,==,!=
+  environment = production                  # The former selects all resources with key equal to environment and value equal to production
+  tier != frontend                          # not selected
+  environment=production,tier!=frontend
+● set-based - label requirements allow filtering keys according to a set of values. Three kinds of operators are supported: in, notin, exists
+  environment in (production, qa)           # selects all resources with key equal to environment and value equal to production or qa
+  tier notin (frontend, backend)            # selects all resources with key equal to tier and values other than frontend and backend, and all resources with no labels with the tier key
+  partition                                 # selects all resources including a label with key partition no values are checked
+  !partition                                # selects all resources without a label with key partition no values are checked
+  
+(25) If a load might be reduce or increase so automatically the pods should be increase is there any object to do that ?
+Yes, HPA.
+
+(26) Pod is in pending state what might be the reason ?
+Schedular, Taints and Tolerations, Affinity and Anti-Affinity, insufficient ResourceQuota (CPU & Memory).
+
+(27) Can have multiple Init Containers ?
+Yes.
+
+(28) Init Containers will exected parallely ?
+No, it will executed one after the other.
+
+(29) Suppose have a Deployment with 6 Replicas of Pod in one of the Pod out of rotation (update, configuration) again point to the service ?
+By using Pod Label, simply remove/change label of the Pod OR else fails the readiness probe.
+
+(30) In a Pod/Container never find some commands utility like bash, sh, ping so what a solution ?
+Ephemeral Containers (OR) Istio.
+
+(31) What are various kubernetes object need to setup for Monitoring ?
+Deployments, Services, PV, ServiceAccounts, Namespaces.
+
+(32) Why does CrashLoopBackOff usually occur ?
+Probe failure - The pod is crashing because of a liveness probe not returning a successful status.
+Out of Memory Failure (OOM)
+Application Failure
+Links:- https://devtron.ai/blog/troubleshoot_crashloopbackoff_pod/
+
+(33) What is Kube-proxy ?
+Kube-proxy is an implementation of both a network proxy and a load balancer.
+It is used to support service abstraction used with other networking operations.
+t is responsible for directing traffic to the container depend on IP and the port number.
+
+(34) If a node is tainted, is there a way to still schedule the pods to that node ?
+When a node is tainted, the pods don't get scheduled by default, however, if we have to still schedule a pod to a tainted node we can start applying tolerations to the pod spec.
+
+(35) What is the difference between configmap and secret ?
+Config maps ideally stores application configuration in a plain text format whereas Secrets store sensitive data like password in an encrypted format.
+Both config maps and secrets can be used as volume and mounted inside a pod through a pod definition file.
+
+(36) How can you get a static IP for a Kubernetes load balancer ?
+A static IP for the Kubernetes load balancer can be achieved by changing DNS records since the Kubernetes Master can assign a new static IP address.
+
+(37) What is NodePort ?
+It opens a specific port on all Nodes and forwards any traffic sent to this port to the service.
+
+(38) What is the job of the kube-scheduler ?
+The kube-scheduler assigns nodes to newly created pods.
+
+(39) What process runs on Kubernetes Master Node ?
+The Kube-api server process runs on the master node and serves to scale the deployment of more instances.
+
+(40) What is a pod ?
+A pod is the most basic Kubernetes object.
+A pod consists of a group of containers running in your cluster.
+
+(41) What is Headless Service ?
+It is similar to that of a ‘Normal’ services but does not have a Cluster IP.
+This service enables you to directly reach the pods without the need of accessing it through a proxy.
+
+(42) What is Namespaces ?
+
+(43) What is Ingress Controllers ?
+
+(44) What is Lifecycle of kubectl ?
+
+(45) What happen if Liveness Probes fails ?
+
+(46) What is Managed Cluster & Self Managed Cluster ?
+
+(47) How traffic from outside reach to applications in Pod in Ingress ?
+
+(48) What is pause container in Kubernetes ?
+Which holds the network namespace for the pod.
+Kubernetes creates pause containers to acquire the respective pod’s IP address and set up the network namespace for all other containers that join that pod.
+Every Kubernetes pod includes an empty pause container, which bootstraps the pod to establish all of the cgroups, reservations, and namespaces before its individual containers are created.
+The pause container image is always present, so the pod resource allocation happens instantaneously as containers are created.
+
+(49) What is ELK & EFK ?

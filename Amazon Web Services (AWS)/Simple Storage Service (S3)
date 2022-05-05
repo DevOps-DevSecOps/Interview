@@ -1,0 +1,15 @@
+(1) How many S3 Bucket can create per account ?
+100.
+
+(2) What were the minimum and maximum file uploads in AWS S3 Bucket ?
+Minimum - 0 bytes & Maximum - 5 TB.
+
+(3) What is AWS S3 CORS ?
+
+(4) What is AWS S3 Versioning ?
+
+(5) What is Cross Region Replication in S3 ?
+
+(6) What are different Storage Classes in S3 ?
+
+(7) How do access S3 Bucket in EC2 Instance ?

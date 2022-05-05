@@ -1,0 +1,97 @@
+(1) What is Ansible ?
+Agentless, ssh, python, Push mechanism.
+
+(2) What are Ansible Playbooks ?
+Playbook is a file where we write YAML script to create infrastructure in nodes.
+Here, we use modules to create infrastructure. We create so many sections in playbook. We mention all modules in task section.
+You can create any no of playbooks. There is no limit. Each playbook defines one scenario. All sections begin with “-” & its attributes & parameters beneath it.
+
+(3) What is Ansible Tower ?
+
+(4) What are Ansible ad-hoc commands ?
+
+(5) What is Ansible Galaxy ?
+
+(6) What are Ansible Modules ?
+
+(7) What is Ansible Task ?
+
+(8) What are Ansible Roles ?
+Its provide a framework for fully independent OR interdependent collections of Variables, Tasks, Files, Templates, Modules. 
+It is primary mechanism for breaking a playbook into multiple files and it makes them easier to reuse. 
+Roles are not Playbooks and there is no way to directly execute a Roles, the Roles should be used within Playbooks.
+Adding more & more functionality to the playbooks will make it difficult to maintain in a single file.
+To address this issue, we organize playbooks into a directory structure called “roles”.
+We create separate file to each section and we just mention the names of those sections in playbook instead of mentioning all modules in main playbook.
+When you call main playbook, main playbook will call all sections files respectively in the order whatever order you mention in playbook.
+
+(9) What are Ansible Vault ?
+we use sensitive information in playbooks like passwords, keys … etc. So any one can open these playbooks and get to know about this sensitive information.
+So we have to protect our playbooks from being read by others.
+So by using Ansible vault, we encrypt playbooks so that, those who ever is having password, only those can read this information.
+It is the way of protecting playbooks by encrypting them.
+
+(10) What is the file structure of Ansible roles ?
+defaults, vars, tasks, files, templates, meta, handlers.
+
+(11) What is Ansible Variables ?
+Variable in playbooks are very similar to using variables in any programming language. 
+It helps you to use and assign a value to a variable and use that anywhere in the playbook. 
+One can put conditions around the value of the variables and accordingly use them in the playbook.
+
+(12) What is ansible.cfg file ?
+
+(13) When I need details logs on executing ansible-playbook what option I need to use ?
+
+(14) I have a ansible playbook which has 5 tasks in playbook, first 2 tasks should run on local machine and other 3 tasks should run on other machine ?
+
+(15) What is Ansible Galaxy ?
+
+(16) What is difference between Shell and Command in Ansible Modules ?
+Shell - The shell module executes shell commands on remote hosts. 
+		By default, the shell module uses the /bin/sh shell to execute commands, but it’s possible to use other shells such as /bin/bash by passing the executable argument.
+Command - The command module executes simple shell commands on remote hosts. (OR) The command module is used to execute commands on a remote node.
+
+(17) How to replace a word OR line using Ansible ?  
+
+(18) What is difference between Chef, Puppet, Salt and Ansible ?
+
+(19) How to create a custom Ansible Modules ?
+
+(20) What is Ansible Inventory ?
+
+(21) How to handle prompts with Ansible Playbooks ?
+
+(22) What is difference between Copy and Fetch in Ansible Modules ?
+Copy - The copy module copies a file from the local or remote machine to a location on the local or remote machine.
+Fetch - The fetch module to copy files from remote locations to the local box. (OR) It is used for fetching files from remote machines and storing them locally in a file.
+
+(23) What is Handlers in Ansible Playbooks ?
+Handlers are just like normal tasks in an Ansible playbook but they run only when if the Task contains a “notify” directive. 
+
+(24) Where do we use conditionals in Playbooks ?
+Sometimes, your nodes could be mixture of different flavors of Linux OS.
+Linux commands vary in different Linux operating systems.
+In this case, we can’t execute common set of commands in all machines, at the same time, we can’t execute different commands in each node separately.
+To address this issue, we have conditionals concept where commands will be executed based up on certain condition that we give.
+
+(25) Why are we using loops concept in Ansible ?
+
+(26) What is Dry run in playbook ?
+Dry run is to test playbook.
+Before executing playbook in nodes, we can test whether the code in playbook is written properly or not.
+Dry run won’t actually executes playbook, but it shows output as if it executed playbook.
+It tests how the playbook is going to behave without running the tasks.
+
+(27) Ansible components ?
+Server:- It is the place where we create playbooks and write code in YML format.
+Node:- It is the place where we apply code to create infrastructure. Server pushes code to nodes.
+SSH:- It is an agent through ansible server pushes code to nodes.
+Setup:- It is a module in ansible which gathers nodes information.
+Inventory File:- In this file we keep IP/DNS of nodes.
+
+(28) The architecture of Ansible ?
+We create Ansible server by installing Ansible package in it.
+Python is pre-requisite to install ansible. We need not to install ansible package in nodes.
+Because, communication establishes from server to node through “ssh” client. By default all Linux machine will have “ssh” client.
+Server is going to push the code to nodes that we write in playbooks. So Ansible follows pushing mechanism.

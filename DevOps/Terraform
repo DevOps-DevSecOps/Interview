@@ -1,0 +1,51 @@
+(1) How do write a Terraform script for AWS Resource if already exists ?
+The terraform import command is used to import existing resources into Terraform. Terraform is able to import existing infrastructure. 
+
+(2) Terraform Provisioners (Files, Remote, Local) & AWS user-data ?
+
+(3) Terraform State Files (Normal, Backend - Enhanced & Standard) ?
+
+(4) How do you inspect the current state of the infrastructure applied ?
+COMMAND:- terraform show
+When you applied your configuration, Terraform wrote data into a file called terraform.tfstate. 
+This file now contains the IDs and properties of the resources Terraform created so that it can manage or destroy those resources going forward.
+
+(5) Local Terraform State File sync with Remote Terraform State File ?
+Copy the Particular block from the Local State File the paste it into Remote State File.
+
+(6) Users have deleted existing AWS Resources from AWS Console which has been created through a Terraform script, so if I create the same AWS Resource with Terraform script again OR not ?
+Yes! It will initially check with AWS Provider meta-data & State file meta-data, so if not present will create the same new AWS Resource again.
+
+(7) How do we mention Terraform Version & AWS Plugin Version in Terraform script ?
+
+(8) Your team has decided to use terraform in your company and you have existing infrastructure. How do you migrate your existing resources to terraform and start using it ?
+Use terraform import and modify the infrastrcuture in the terraform files and do the terraform workflow (init, plan, apply).
+
+(9) How do you configure Multiple Provider Instances ?
+alias
+
+(10) What is an IaC and what are the benefits ?
+IaC is a short form of Infrastructure as code.
+-> Automation
+-> Reusability of the code
+-> Versioning
+
+(11) Different environments and you want to deploy your infrastructure in all the environments such as dev, test, prod, etc. How do you achieve it ?
+-> Using Folders — Method 1
+-> Using Folders — Method 2
+-> Workspaces
+-> Modules
+
+(12) If your state file is too big and you want to list the resources from your state. What is the command ?
+COMMAND:- terraform state list
+
+(13) What are the types of provisioners ?
+local-exec
+remote-exec
+
+(14) What are workspaces ?
+The default workspace name is default.
+Certain backends support multiple named workspaces, allowing multiple states to be associated with a single configuration.
+
+(15) Can you delete the default workspace ?
+No. You can't ever delete default workspace.

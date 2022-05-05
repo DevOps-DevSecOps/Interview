@@ -1,0 +1,23 @@
+(1) What and Why we need Helm Charts ?
+Its helps in managing Kubernetes applications - its help us to define install, upgrade, delete.
+Charts are very easy to create, version, share, publish. 
+
+(2) What is difference between V2 and V3 ?
+V3:-
+The Cluster have RABC objects (Role, ClusterRole, RoleBinding, ClusterRoleBinding) are enabled.
+Tiller component is removed.
+Helm Client will maintain all informations like Versioning, Releases.
+Installation also very easy (Helm Client).
+It consider both what ever the changes that made in Helm Charts and using Kubectl CLI.
+Helm Chart 'RELEASE_NAME' will be reusable in different Namespaces with in a Cluster, it work.
+Where dependencies are added under the dependencies section in 'Chart.yaml'.
+Helm Chart 'RELEASE_NAME' is mandatory (OR) Can use "--generate-name".
+V2:-
+The Cluster doesn't RABC objects (Role, ClusterRole, RoleBinding, ClusterRoleBinding) are not enabled.
+Tiller component is available. 
+Tiller will maintain all informations like Versioning, Releases.
+Installation also very hard (Helm Client, Tiller Server).
+What ever the changes was already there done by using Kubectl CLI will be ignore. Its only take the changes which are only in the Helm Chart. 
+In 'default' Namespace have installed Helm Chart 'RELEASE_NAME' and it can't use same Helm Chart 'RELEASE_NAME' in different Namespace, it won't work.
+Where dependencies are added under the dependencies section in 'requirements.yaml'.
+If ignoring a Helm Chart 'RELEASE_NAME' will took a random 'RELEASE_NAME'.

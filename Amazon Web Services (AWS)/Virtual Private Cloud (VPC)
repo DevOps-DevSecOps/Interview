@@ -1,0 +1,37 @@
+(1) Network ?
+VPC Per-Region - 5, Subnets Per-VPC - 200, IPv4 CIDR blocks Per-VPC - 5, IPv6 CIDR blocks Per-VPC - 1.
+
+(2) What is NACL (Network Access Control List) and Security Group ?
+Security Groups - stateful, can work EC2 Instance level, permit rules only.
+Network ACLs - stateless, can work Subnet level, permit & deny rules only.
+
+(3) Can change the Security Group to running EC2 Instance ?
+Yes.
+
+(4) Can change Network Interface to running EC2 Instance ?
+Yes.
+
+(5) What is the difference between NAT Gateway and NAT Instance ?
+
+(6) What is VPCs, Subnets, Route Tables, Internet Gateways, Peering, Endpoints, Transit Gateways ?
+
+(7)  Can I modify the route rule in VPC ?
+
+(8) How to monitor a network traffic in a VPC ?
+
+(9) There are 3 VPCs A, B, C then A is peered with B and B is peered with C can A and C talk to each other ?
+No.
+
+(10) Can change the VPC for EC2 Instance after creation ?
+No.
+
+(11) Why does AWS Reserve have 5 IP Addresses ?
+AWS reserves 5 IP address in each subnet CIDR block. Cannot be assigned to an instance.
+The first 4 addresses are reserved for infrastructure services
+The last 1 address is the broadcast
+EG: In a Subnet with CIDR block 10.0.0.0/24, the following 5 ip addresses are reserved
+10.0.0.0   -> Network Address.
+10.0.0.1   -> Reserved by AWS for the VPC router.
+10.0.0.2   -> DNS Server.
+10.0.0.3   -> Reserved by AWS for future use.
+10.0.0.255 -> Broadcast Address.

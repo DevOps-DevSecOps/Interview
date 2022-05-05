@@ -1,0 +1,160 @@
+(1) Explain How many are Git Branches OR Branching Strategy using & purpose ?
+GitHub/GitLab/Bitbucket (Enterprise)
+Master (Branch) - Production (Environment). 
+                  Stable Production Code without any changes.
+                  This branch contains Production Code. All Development code means Development Branch is merged into Master Branch.
+Development (Branch) - Staging OR Pre-Prod (Environment). 
+                       Staging OR Pre-Prod Code.
+Feature (Branch) - This Feature branch created from Development branch. 
+                   To implement new features for application then create pull request to merge into Development branch that particular Feature branch will be deleted.
+Release (Branch) - This Release branch created from Development branch.
+                   To support preparation of new production releases.
+                   Then Release Branch merged into Development Branch and Master Branch.
+Hotfix (Branch) - This Hotfix branch created from Master branch.
+                  To patch the production releases OR It created for bugs in production releases.
+                  That all the bugs for a production release should be resolved in a single Hotfix branch. 
+                  That after all the production bugs are resolved, the updated code is merged back to the Development branch and Master branch OR It gets merged into both Branches like Master and Development. 
+                  After merge make sure the Hotfix branch is deleted.
+
+(2) What is Git Revert & How do revert a commit that already pushed to repository it maintain in public ?
+
+(3) What is Git Merge and Git Rebase ?
+When you run Git merge, one new merge commit will be generated which is having the history of both development branches. 
+It preserves the history of both branches. By seeing this merge commit, everyone will come to know that we merged two branches.
+If you do Git rebase, commits in new branch will be applied on top of base branch tip. There won’t be any merge commit here.
+It appears that you started working in one single branch form the beginning. This operation will not preserves the history of new branch.
+
+(4) What is Git ?
+Git is one of the Source Code Management tools where we can store any type of code.
+Git is version control system because every update stored as a new version. At any point of time, we can get any previous version. We can go back to previous versions.
+Every version will have a unique number. That number we call commit-ID. By using this commit ID, we can track each change.
+
+(5) What is distributed VCS ?
+
+(6) What are advantages of using a VCS ?
+
+(7) What is the difference between Git and SVN ?
+Git - Git has a Distributed Model, In Git every user has their own copy of code on their local like their own branch, Git has a cloned repository. 
+      It is a Distributed version control system where back up copy is available in everyone’s machine’s local repository as well as a central repository.
+      We can create any no of branches as we want. So we can go in parallel development simultaneously.
+      Every Git repository will have its own local repository. So we can save changes locally. At the end of our work finally, we can push code to a central repository.
+SVN - SVN has a Centralized Model, In SVN there is central repository has working copy that also make changes and committed in central repository, SVN does not have a cloned repository. 
+      It is centralized version control system (CVCS) where back up copy will be placed in only one central repository.
+      There is no branching strategy in SVN. You can’t create branches. So no parallel development.
+      There is no local repository. So can’t save anything locally. Every time after writing code you need to push that code to central repository immediately to save changes.
+	  
+(8) What is the difference between Git and GitHub ?
+GitHub - is central git repository where we can store code centrally. We can create any number of repositories in Git hub.
+         All public repositories are free and can be accessible by everyone.
+         Private repositories are not free and can restrict public access for security.
+         We can copy the repository from one account to other accounts also. This process we call as “Fork”.
+         In this repository also we can create branches. The default branch is “Master”.
+
+(9) What language developed with Git ?
+
+(10) What is a commit message ?
+Every time we commit, while committing, we have to give commit message just to identify each commit.
+We can’t remember to commit numbers because they contain 40 long alphanumeric characters.
+So, to remember commits easily, we give commit message.
+We have one more way to identify commits. That is giving “Tags”.
+Tag is a kind of meaningful name to a particular commit. Instead of referring to commit ID, we can refer to tags. Internally tag will refer to respective commit ID.
+
+(11) Explain some basic Git Commands ?
+
+(12) What is conflict in Git ?
+
+(13) How do you resolve a conflict in Git ?
+
+(14) How do you revert a commit that has already been pushed and made public ?
+
+(15) What is the difference between Git Fetch and Git Pull ?
+Git Fetch - Only downloads new data from a remote repository, does not integrate any one of this new data into working files.
+            Only bringing changes from central repo to local repo. But these changes will not be integrated to local repo which is there in your server.
+            It downloads new commits from remote repository to local repository.
+Git Pull - Updates the current HEAD branch with the latest changes from the remote repository, it downloads new data and integrate it with the current working files, it tries to merge remote changes with local, It is a combination of git fetch + git merge.
+           To get changes from central repository. internally two commands will get executed (Git Fetch and Git Merge).
+           It downloads new commits from remote repository to working directory.	
+		   
+(16) What is Git Stash ?
+We create multiple branches to work simultaneously on multiple features.
+But to work on multiple tasks simultaneously in one branch (i.e. on one feature), we use git stash.
+Stash is a temporary repository where we can store our content and bring it back whenever we want to continue with our work with that stored content.
+It removes content inside file from working directory and puts in stashing store and gives clean working directory so that we can start new work freshly.
+Later on you can bring back that stashed items to working directory and can resume your work on that file.
+Git stash applicable to modified files.
+Once we finish our work, we can remove all stashed items form stash repository.
+
+(17) What is the difference between Git Status and Git Diff ? 
+
+(18) What is the difference between Git Clone and Git Remote ?
+
+(19) What is a function of git config ?
+
+(20) How to remove a file from Git without removing it from your file system ?
+git reset FILE_NAME
+add that FILE_NAME in .gitignore
+
+(21) What is the difference between Git Revert and Git Reset ?
+Git Revert - It is used to remove changes from all 3 stages (work directory, staging area and local repository).
+             This operation will generate new commit ID with some meaningful message to ignore previous commit where mistake is there.
+             We can’t completely eliminate the commit where mistake is there. Because Git tracks each and every change.
+Git Reset - Git Reset command is used to remove OR undo changes form staging area.
+            This is bringing back file form staging area to work directory. We use this command before commit.
+
+(22) What is Git Reflog ?
+keep a track of every single change made in a repository. Command: git reflog
+
+(23) Explain the difference between Centralized and Distributed VCS ?
+
+(24) How you will know in Git if a branch has been already merged into master ?
+git branch --merged
+git branch --no-merged
+
+(25) What is Git Repository ?
+
+(26) What is .git folder ?
+
+(27) How to link an existing local repository to a remote repository ? 
+
+(28) What are the stages in Git ?
+
+(29) How to change OR edit the commit message in Git ?
+
+(30) How to delete branch from a Local, Remote in Git ?
+
+(31) What is .gitignore file ?
+
+(32) How to clone repository with specific Branch in Git ?
+
+(33) A cloned repository in your local and changed the cloned folder name to some other name ?
+git remote -v
+
+(34) Changed 5 files a, b, c, d, e in repository and you did git add ., now all 5 files are in staging area, now I decided to not to commit file d. How would I delete from staging to local ?
+
+(35) Working on new feature in some branch, now your manager say stop working on that and change few other things on old code. After changing the old code, I need to work on new code, so I need to place my new changes some place ?
+git stash
+
+(36) What are Hooks in Git ?
+
+(37) What are the stages in Git ?
+Workspace:- It is the place where we can create files physically and modify. Being a Git user, we work in this workspace.
+Staging area/Indexing area:- Git takes a snapshot for every version. It is a buffer zone between workspace and local repository. We can’t see this region because it is virtual.
+Local repository:- It is the place where Git stores all commit locally. It is a hidden directory so that no one can delete it accidentally. Every commit will have unique commit ID.
+Central repository:- It is the place where Git stores all commit centrally. It belongs to everyone who is working in your
+project. Git Hub is one of the central repositories. Used for storing the code and sharing the code to others in the team.
+
+(38) What is Git cherry-pick ?
+When you go with git merge, all commits which are there in new development branch will be merged into current branch.
+But sometimes, requirement will be in such that you would want to get only one commit form development branch instead of merging all commits.
+Git cherry-pick will pick only one commit whatever you select and merges with commits which are there in your current branch.
+So picking particular commit and merging into your current branch we call git cherry-pick.
+
+(39) What is Git Merge ?
+We can create any no of branches for parallel development. We write code for each feature in each branch so that development happens separately.
+Finally, we merge code off all branches in to Master and push to central repository. We can merge code to any other branch as well.
+But merging code into master is standard practice that being followed widely. Sometimes, while merging, conflict occurs.
+When same file is in different branches with different code, when try to merge those branches, conflict occurs. We need to resolve that conflict manually by rearranging the code.
+
+(40) What is PR (Pull Request) ?
+
+(41) How do resolve Merge Conflicts ?

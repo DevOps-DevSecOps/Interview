@@ -1,0 +1,8 @@
+(1) What is SonarQube - Quality Profiles & Quality Gates ?
+Quality Profiles - A Quality Profiles are collections of 'Rules' to apply during an analysis. 
+                   For each language there is a default profile, Sonar way is the default Quality Profile for each language of SonarQube. 
+                   For each language the Quality Profiles types are Bugs, Vulnerabilities, Code Smells, Security Hotspots.  
+Quality Gates - A Quality Gate is a code quality goal, A Quality Gate is a collections of 'Conditions'. 
+                Sonar way is the default Quality Gate of SonarQube.
+                When SonarQube runs it will identify if the code meets all the quality thresholds, the project should pass through each of the thresholds set.  
+                Configure the SonarQube Webhooks with Jenkins URL because a Quality Gate can be seen as a PASS/FAIL then it will inform to Jenkins build job mark as PASS/FAIL.

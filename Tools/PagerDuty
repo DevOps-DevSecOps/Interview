@@ -1,0 +1,17 @@
+What is PagerDuty ?
+PagerDuty is an incident management platform that provides reliable notifications, automatic escalations, on-call scheduling, and other functionality to help teams detect and fix infrastructure problems quickly.
+
+What notification methods do you support ?
+Incident notifications are automatically sent using any preferred combination of phone calls, SMS, push notifications and emails. 
+You can customize these notification methods, so that incidents dynamically select the right notification behavior depending on their severity, time of day, or during defined support hours.
+
+What if the on-call engineer doesn’t respond ?
+PagerDuty allows you to specify escalation rules.
+When an incident is triggered, PagerDuty will first try to contact the level-one on-call responder for the incident.
+If that person doesn’t answer within the user-specified escalation timeout, PagerDuty will automatically escalate to the level-two responder, and so on.
+You can notify up to 5 users/schedules in a single escalation rule, and we support up to 20 escalation rules for each escalation policy.
+
+How does PagerDuty work ?
+Monitoring_System            PagerDuty_Service            Escalation_Policy            User_Setting
+Events                ->     Incidents            ->      Users                ->      Notification Rules
+Events                ->     Incidents            ->      On-Call Schedules    ->      Notification Rules

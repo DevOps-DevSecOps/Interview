@@ -1,0 +1,162 @@
+(1) Explain the architecture of Docker ?
+Install 'Docker Engine' it comes with several components like
+Rest API - interact with docker server.
+Docker CLI - interact with docker server.
+Container Runtime Interface (CRI) - to run the containers.
+Network - to perform the different network activities.
+Volumes
+Build Images
+
+(2) What is a Dockerfile and Dockerfile Multi-Stage ?
+Dockerfile - DockerFile is a text document which is used to assemble a Docker image.
+
+(3) What is a Docker Image and Docker Container ?
+Docker Image - is light weight OS provided.
+			   We can get any type of docker image form docker hub. 
+			   We use these docker images to create docker containers.
+Docker Container - A Docker Container will be created by running any specific Docker image.
+
+(4) What is a Docker ?
+Docker is a tool by using which, we create containers in less time.
+Docker uses light weight OS in the form of docker images that we will get from docker hub.
+It became so popular because of its unique virtualization concept called “Containerization”.
+A user can quickly build, ship, and run its applications.
+A single operating system kernel will run all containers.
+Docker container is more light-weight than the virtual machines.
+
+(5) What is a Docker Hub and Docker Registry ?
+Docker Hub - is a cloud Hub, to build the images and store them in Docker Hub. It is a central repository.
+Image Repository - can push, pull, find and manage Docker Images.
+Automated Build - can use to create new Images by making changes to SCM Repository of the Image.
+Webhooks - we can trigger actions that can create and build new images by pushing a change to repository.
+Integration - can integration with GitHub/Bitbucket.    
+Docker Registry - Registry server is our own docker hub created to store private docker images instead of storing in public Docker hub.
+				  Registry server is one of the docker containers. 
+				  We create this Registry server from “registry” image, especially provided by docker to create private docker hub.
+				  We can store any no of private docker images in this Registry server.
+				  
+(6) What is a Docker Swarm ?
+Is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster. It is a container orchestration tool, to manage multiple containers deployed across multiple host machines. 
+
+(7) What is a Docker Compose ?
+
+(8) What is a .dockerignore file ?
+
+(9) What is Containerization and Virtualization ?
+
+(10) 10+ Containers are running on host server. All these containers stop on server reboot OR docker engine restart which requires a manually container start. Is there any way to auto restart the containers ?
+One should enable auto restart policy to handle it. Restart support policies are on-failure, always, unless-stopped.
+docker run -itd --restart=always --name Alpine_Container alpine   
+
+(11) Developers create multiple test containers in Dev Server in a day which consumes lot of disk space and manual cleanup is required. Is there any way to automate this cleanup ?
+yes, using --rm flag while starting a container to auto remove the container on its exit.
+docker run -itd --rm --name Alpine_Container alpine   
+
+(12) How does Docker really work behind the scenes ? (OR) Where Namespace, Cgroups, UnionFS is used in docker ?
+Namespace - is responsible for isolation between the containers. Types of Namespace are PID, Network, User, Filesystem.
+Cgroups - is responsible for resource management OR resource limitation in each container. Types of Cgroups are CPU, Memory, Network, Block I/O. Cgroups is a Control Groups.
+UnionFS - is a filesystem service which is used for creating docker image layers. 
+
+(13) What types of nodes in Docker Swarm ?
+Managers & Workers. 
+
+(14) How to add nodes in Docker Swarm ?
+
+(15) What is the difference between docker stop and docker kill ?
+
+(16) Command to clean-up docker host (deleting stopped containers, dangling images, unused networks) ?
+
+(17) What is the difference between CMD and ENTRYPOINT in Dockerfile ?
+
+(18) Can we have multiple CMD and ENTRYPOINT in Dockerfile ?
+
+(19) What is a Docker Volumes ?
+
+(20) What is a Docker Network ?
+
+(21) What is the difference between docker save and docker load ?
+
+(22) How do copy a file from local to running Container ?
+
+(23) How to check IP_Address of a Docker Container ?
+
+(24) If exit from a Docker Container the data will lost OR there ?  
+No, won’t lose any data when Docker container exits, until explicitly delete the container.
+
+(25) What is -p and -P in docker run ?
+--publish , -p = Publish a containers ports to the host.
+--publish-all , -P = Publish all exposed ports to random ports.
+
+(26) Is it possible to push/pull the Images, run/stop the Containers from inside a Docker Container OR talk to Host Docker Daemon from inside a Docker Container ?
+Yes, It can communicate with Docker Container to Host Docker Daemon & also push/pull the Images, run/stop the Containers from inside a Docker Container.  
+When Docker Engine has installed on Host, can check ‘docker.sock’ in ‘/var/run/’ location path. Now inside Docker Container have to install Docker Engine and check ‘docker.sock’ in ‘/var/run/’ location path.
+docker run -itd -v /var/run/docker.sock:/var/run/docker.sock --name Docker_Container docker     
+docker.sock is basically the Unix socket the Docker daemon listens on by default. It is also a tool used to communicate with the Docker daemon from within a container. 
+
+(27) In Host have a APP and DB containers are running. How can these 2 containers talk to each other ?
+Yes, can do it
+using “--link" flag OR else the App and DB containers should run on same Docker Network, by default “Bridge Network”.
+
+(28) How to create a Bridge Network ?
+
+(29) How is Overlay Network different from Bridge Network ?
+
+(30) What are the most common instructions in Dockerfile ?
+FROM, MAINTAINER, LABEL, RUN, WORKDIR, CMD, EXPOSE, ADD, COPY, ENTRYPOINT, VOLUME, USER, ENV, ARG, ONBUILD
+
+(31) What does ONBUILD instruction do in Dockerfile ?
+
+(32) Suppose have a Dockerfile that accepts arguments, if I supply value as 1 then it should use Maven 2.X version for base Image and if I supply 2 then it should take Maven latest as base Image ?       
+Yes, using If & Else conditions in Dockerfile.
+
+(33) What is difference between ADD and COPY in Dockerfile ?
+ADD - copies a file/directory from your host to your image, but can also fetch remote URLs, extract TAR files.
+COPY - copies a file/directory from your host to your image.
+
+(34) Explain Lifecycle of Docker Container ?
+Create, Run, Pause, Unpause, Start, Stop, Restart, Kill, Remove
+
+(35) Is it possible to copy a file inside a stopped Docker Container without starting it ?
+Yes, It will copy files into stopped Docker Container.
+
+(36) can I use JSON instead of YAML for Docker Compose file ?
+Yes, Command: docker-compose -f FILE_NAME.json up
+
+(37) What is Docker Stack ?
+
+(38) I want to protect sensitive data and avoid adding few files/folders like .git, tests while building a Docker Image. Is there any way to control it ?
+.dockerignore file
+
+(39) What is a standalone containers in Docker ?
+A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+
+(40) In Dockerfile ENV version=1.0 and created a Image also running as Container, in cli "docker run -itd -e version=3.0 _ _ _" what version value it will take ?
+It will take Container Runtime Interface (CRI) version=3.0
+
+(41) Running a Dockerfile in a directory few required files are there OR empty directory and one more option to running a Dockerfile in Root File System ?
+Dockerfile in a directory with few required files is the best practice, so the docker build . command set the docker client send all the files to docker daemon for building a image in these case it will sent required files as context but it will take less time to build a image.
+Dockerfile in Root File System, so the docker build . command set the docker client send all the files to docker daemon for building a image in these case it will sent all root file system data as context but it will take lot of time to build a image, instead can use .dockerignore file.
+
+(42) What is Docker workflow ?
+First we create Docker file by mentioning instructions to build docker image.
+Form this Docker image, we are going to create Docker container.
+This Docker image we can push to docker hub as well. This image can be pulled by others to create docker containers.
+We can create docker images from docker containers.
+
+(43) List of Docker components ?
+Docker image:- Contains OS (very small) (almost negligible) + softwares
+Docker Container:- Container like a machine which is created from Docker image.
+Dockerfile:- Describes steps to create a docker image.
+Docker Hub/Registry:- Stores all docker images publicly.
+Docker Daemon: – Docker service runs at back end.
+
+(44) What are the ways through which we can create docker images ?
+We can take any type of docker image directly from docker hub being provided by docker company and docker community.
+We can create docker image form docker file. It is the most preferred way of creating docker images.
+We can create our own docker images form our own docker containers. I.e. we create container form base docker image taken form docker hub and then by going inside container, we install all required softwares and then create docker image from our own docker container.
+
+(45) What is the default tag for a Docker image ?
+latest, So version:latest tag.
+
+(46) What are different States of a Docker Container ?
+Up, Restarting, Created, Exited.

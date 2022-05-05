@@ -1,0 +1,28 @@
+(1) Where do find a logs in Tomcat ?
+
+(2) Can create multiple new applications with same name in Tomcat ?
+In ‘/Tomcat/conf/’ location path find ‘server.xml’ file -> edit ‘server.xml’ file and add different multiple applications by assigning a different port no, then reload the Tomcat Server.
+Eg: - $ vi /Tomcat/conf/server.xml
+<Service name="foo">
+    <Connector port="80" protocol="org.apache.coyote.http11.Http11NioProtocol" />
+    <Engine name="Catalina80" defaultHost="localhost">
+        <Host name="localhost" appBase="foo" unpackWARs="true" autoDeploy="true" />
+    </Engine>
+</Service>
+
+<Service name="bar">
+    <Connector port="81" protocol="org.apache.coyote.http11.Http11NioProtocol" />
+    <Engine name="Catalina81" defaultHost="localhost">
+        <Host name="localhost" appBase="bar" unpackWARs="true" autoDeploy="true" />
+    </Engine>
+</Service>
+
+Instead of dropping the war files in the webapps directory, you need to create the directory foo for port 80 and bar for port 81. Name both war files ROOT.war and drop them in their own base directory. You can of course have multiple apps in each directory if you need.
+appBase: The Application Base directory for this virtual host. This is the pathname of a directory that may contain web applications to be deployed on this virtual host. You may specify an absolute pathname, or a pathname that is relative to the $CATALINA_BASE directory. [...] If not specified, the default of webapps will be used.
+Another option is to keep the default tomcat configuration and use another http server (apache, nginx, lighttpd,...) to map a port to the internal path of a tomcat application.
+The root application won't receive requests that match other applications, e.g. /foo/example will go to foo.war, /example/example will go to ROOT.war.
+
+To check the application status: $ tail /Tomcat/logs/catalina.out
+
+(3) Tomcat will support EAR file ?
+No.

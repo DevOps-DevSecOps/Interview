@@ -1,0 +1,145 @@
+(1) How to automatically trigger a job in Jenkins ?
+
+(2) How to write Webhooks Script in Jenkins Pipeline ?
+
+(3) *.jar, *.war can path change in another directory?
+
+(4) How to set version no for Artifactory in Job & Pipeline ?
+
+(5) What is Jenkins Pipeline & Jenkins Multibranch Pipeline ?
+
+(6) What is Jenkins ?
+
+(7) Name a Jenkins environment variable have used in a shell script or bash file ?
+$JOB_NAME, $BUILD_NUMBER, $JOB_URL
+
+(8) What are the types of jobs OR projects in Jenkins ?
+
+(9) What is the difference between Continuous Delivery and Continuous Deployment ?
+
+(10) What is a Jenkinsfile ?
+
+(11) What are Jenkins Pipeline concepts ?
+
+(12) Explain the two types of the syntax used in Jenkins Pipeline ?
+
+(13) What is Continuous Integration ?
+
+(14) Mention the commands that you can use to restart Jenkins manually ?
+Jenkins_URL/restart - forces a restart without waiting for the build to complete.
+Jenkins_URL/safeRestart - allows all running builds to complete before it restarts.
+
+(15) How do we change Jenkins server port no ?
+
+(16) What is difference between Freestyle job and Pipeline job ?
+
+(17) What is difference between Declarative Pipeline and Scripted Pipeline ?
+
+(18) What is upstream/downstream job in Jenkins ?
+
+(19) What are the plugins have you used in your project ?
+
+(20) How to import custom plugins in Jenkins ?
+
+(21) How can move Jenkins from one server to another server ?
+
+(22) How to reset Jenkins login password ?
+
+(23) How to schedule a Job in Jenkins ?
+
+(24) How to save only last 5 builds of Jenkins job ?
+
+(25) What was the Jenkins Plugin extension format ?
+Jenkins Plugin extension format is .hpi (eg:- PLUGIN_NAME.hpi), hpi means Hudson Plugin Link.
+
+(26) How to secure a Jenkins ?
+
+(27) In Jenkinsfile can we use different nodes for each stage ?
+Yes
+https://docs.cloudbees.com/docs/admin-resources/latest/automating-with-jenkinsfile/using-multiple-agents
+https://stackoverflow.com/questions/44481122/jenkins-pipeline-using-different-nodes-for-different-stages
+
+(28) What is difference between Webhooks, Poll SCM, Build Periodically ?
+
+(29) How do take Jenkins Backup ?
+
+(30) What is Jenkins shared libraries ?      
+
+(31) How to customize the build number display to something else in Jenkins job page ?
+
+(32) What are the things you need to set, if you want download dependency from private repository ?
+
+(33) How to Downgrade a Jenkins Plugin ?
+Download particular Plugin with previous Version from Official Website https://plugins.jenkins.io/ and then in Jenkins server -> Manage Jenkins -> Manage Plugins -> ‘Advanced’ option -> ‘Upload Plugin’ option - now upload a downloaded plugin and click-on ‘upload’ -> Restart a Jenkins server, again in Jenkins server -> Manage Jenkins -> Manage Plugins -> ‘Installed’ option - search for a particular plugin then select a particular plugin beside a option ‘Downgrade to VERSION_NO’ after click-on it.     
+
+(34) How to Pull Request (PR) like merge two branches using Jenkins ?
+Freestyle / Maven - in ‘Post-build Actions’ -> using option ‘Git Publisher’. 
+Multibranch Pipeline (Branches and Pull Requests) - using Plugins like GitHub Branch Source, Bitbucket Branch Source, GitLab Branch Source. 
+
+(35) What is post section in Jenkins Pipeline ?
+
+(36) How to store Credentials as a global in Jenkins ?
+‘Manage Jenkins’ option -> ‘Manage Credentials’ option -> now can add credentials as a global in Jenkins. 
+Can manage Credentials as 'Update', 'Delete', 'Move'.
+
+(37) Can overwrite existing Credentials inside a Jenkins job ?
+No.
+
+(38) Can do multiple Git Repositories in a single Jenkins job ?
+Yes, using a Multiple SCMs Plugin in Jenkins.
+
+(39) What is difference between EAR, WAR, JAR ?
+JAR (Java Archive) - These files have '.jar' extension. 
+                     A '.jar' file contains .class files, resources like .java and property files.
+                     To run an executable JAR file by using command "java -jar FILE_NAME.jar".
+WAR (Web Application Archive) - These files have the '.war' extension. 
+                                The web application that is to be deployed on servlet or JSP container is too converted into '.war' file.
+                                It can be deployed using Tomcat. 
+                                The '.war' file can have .jsp, html, .js and any other files which would necessary for a web application.
+EAR (Enterprise Archive) - The file merges JAR and WAR files into a single archive. 
+                           These files with the '. ear' extension have a directory for metadata.
+
+(40) Which Application Server will support EAR file ?
+An EAR file can be deployed to a Java EE application server such as WebSphere, WebLogic, JBoss.
+
+(41) What is Jenkins Architecture ?
+Jenkins architecture is Client-Server model.
+we install Jenkins, we call that server is Jenkins master.
+We can create slaves also in Jenkins, so that, server load will be distributed to slaves.
+Jenkins master randomly assigns tasks to slaves.
+To restrict any job to run in particular slave, then we can do it so that, that particular job will be executed in that slave only.
+We can group some slaves by using “Label”.
+
+(42) Why only Jenkins ?
+It has so many plug-ins.
+write your own plug-in.
+
+(43) Benefits of CI ?
+Detects bugs as soon as possible, so that bug will be rectified fast and development happens fast.
+Complete automation. No need manual intervention.
+We can intervene manually whenever we want. I.e. we can stop any stage at any point of time so have better control.
+
+(44) What are the ways through which we can do Continues Integration ?
+Manually: – Manually write code, then do build manually and then test manually by writing test cases and deploy manually into clients machine.
+Scripts: – Can do above process by writing scripts so that these scripts do CI&CD automatically. But here complexity is, writing script is not so easy.
+Tool: – Using tools like Jenkins is very handy. Everything is preconfigured in these type of tools. So less manual intervention. This is the most preferred way.
+
+(45) What is CI & CD ?
+CI means Continues Integration and CD means Continues Delivery/Deploy.
+Whenever developers write code, we integrate all that code of all developers at that point of time and we build, test and deliver/deploy to the client.
+So instead of doing night builds, build as and when commit occurs by integrating all code in SCM tool, build, test and checking the quality of that code is what we call Continues Integration.
+
+(46) What is Jenkins Workflow ?
+We attach Git, Maven, Selenium & Artifactory plug-ins to Jenkins.
+Once Developers put the code in Git, Jenkins pulls that code and send to Maven for build.
+Once build is done, Jenkins pulls that built code and send to selenium for testing.
+Once testing is done, then Jenkins will pull that code and send to Artifactory as per requirement and finally we can deliver the end product to client we call Continues delivery.
+We can also deploy with Jenkins into clients machine directly as per the requirement.
+
+(47) Key terminology that we use in Jenkins ?
+Integrate: Combine all code written by developers till some point of time.
+Build: Compile the code and make a small executable package.
+Test: Test in all environments whether application is working properly or not.
+Archived: Stored in an artifactory so that in future we may use/deliver again.
+Deliver: Handing the product to Client.
+Deploy: Installing product in client’s machines.

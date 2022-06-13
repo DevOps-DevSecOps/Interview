@@ -90,7 +90,7 @@ O/P:- This is from script.sh
 (9) What is $$, $?, $0, $*, $@, $#, $! in Shell Script ?
 $$ - is the PID of the current shell. 
 $? - the exit status of the last command executed. (0=success, 127=unsuccess)  
-$0 - it set script file name inside a script.
+$0 - it set script filename inside a script.
 $* - all the arguments are single double quoted. If a script receives two arguments, $* is equivalent to "$1 $2".
 $@ - all the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to "$1" "$2".
 $# - is a number of passed arguments to the script was executed.

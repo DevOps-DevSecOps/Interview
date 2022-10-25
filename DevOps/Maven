@@ -1,17 +1,22 @@
 (1) What is the clean command in Maven ?
 
 (2) How to inter-link parent pom.xml with child pom.xml ?
-Multi-Module - A multi-module project is built from an aggregator POM that manages a group of submodules. The aggregator is located in the project root directory and must have packaging of type POM. The submodules are regular Maven projects and they can be built separately or through the aggregator POM.
-Dependency-Management - It is a core feature of Maven. Managing dependencies for multi-module projects and applications that consist of hundreds of modules.
+● Multi-Module 
+A multi-module project is built from an aggregator POM that manages a group of submodules. The aggregator is located in the project root directory and must have packaging of type POM. The submodules are regular Maven projects and they can be built separately or through the aggregator POM.
+● Dependency-Management 
+It is a core feature of Maven. Managing dependencies for multi-module projects and applications that consist of hundreds of modules.
 https://github.com/DeekshithSN/Maven_Examples
 
 (3) What is Maven, the benefit of integrating Maven with Jenkins ?
 
 (4) What is Maven Build Lifecycle ?
 Three Types
-default - default lifecycle handles your project deployment.
-clean - clean lifecycle handles project cleaning. Three phases like pre-clean, clean, post-clean.
-site - site lifecycle handles the creation of your project's site documentation. Four phases like pre-site, site, post-site, site-deploy. It will generate project report include like License, Summary, Dependencies, CI Report, HTML Document.
+● default 
+default lifecycle handles your project deployment.
+● clean 
+clean lifecycle handles project cleaning. Three phases like pre-clean, clean, post-clean.
+● site 
+site lifecycle handles the creation of your project's site documentation. Four phases like pre-site, site, post-site, site-deploy. It will generate project report include like License, Summary, Dependencies, CI Report, HTML Document.
 
 (5) What are Maven Goals ?
 These lifecycle phases are executed sequentially to complete the default lifecycle. The default lifecycle is used, Maven will first validate the project, then will try to compile the sources, run those against the tests, package the binaries (e.g. jar), run integration tests against that package, verify the integration tests, install the verified package to the local repository, then deploy the installed package to a remote repository.

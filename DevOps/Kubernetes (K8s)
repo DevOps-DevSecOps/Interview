@@ -149,4 +149,19 @@ Kubernetes creates pause containers to acquire the respective pod’s IP address
 Every Kubernetes pod includes an empty pause container, which bootstraps the pod to establish all of the cgroups, reservations, and namespaces before its individual containers are created.
 The pause container image is always present, so the pod resource allocation happens instantaneously as containers are created.
 
-(49) What is ELK & EFK ?
+(49) Explain PVC ?
+The full form of PVC stands for Persistent Volume Claim.
+It is storage requested by Kubernetes for pods.
+This claim should be created in the same namespace where the pod is created.
+
+(50) What are the types of Kubernetes Volume ?
+The types of Kubernetes Volume are: EmptyDir, GCE persistent disk, Flocker, HostPath, NFS, ISCSI, rbd, PersistentVolumeClaim, downwardAPI, ....etc.
+
+(51) What is ContainerCreating pod ?
+It is one that can be scheduled on a node but can’t start up properly.
+
+(52) What is minikube ?
+It runs on the single nodes that are inside VM on a computer. This tool is also used by programmers who are developing an application using 
+Kubernetes.
+
+(53)

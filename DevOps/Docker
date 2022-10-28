@@ -43,6 +43,12 @@ Is a group of either physical or virtual machines that are running the Docker ap
 (8) What is a .dockerignore file ?
 
 (9) What is Containerization and Virtualization ?
+● Virtualization
+The hypervisors will provide an entire virtual machine to the guest including Kernal. 
+Virtual machines will be an abstraction of the hardware layer. 
+Each VM is a physical machine.
+● Containerization
+It will be an abstraction of the application layer.
 
 (10) 10+ Containers are running on host server. All these containers stop on server reboot OR docker engine restart which requires a manually container start. Is there any way to auto restart the containers ?
 One should enable auto restart policy to handle it. Restart support policies are on-failure, always, unless-stopped.
@@ -144,11 +150,27 @@ This Docker image we can push to docker hub as well. This image can be pulled by
 We can create docker images from docker containers.
 
 (43) List of Docker components ?
-Docker image:- Contains OS (very small) (almost negligible) + softwares
-Docker Container:- Container like a machine which is created from Docker image.
-Dockerfile:- Describes steps to create a docker image.
-Docker Hub/Registry:- Stores all docker images publicly.
-Docker Daemon: – Docker service runs at back end.
+● Docker Client (docker)
+It will enable a user for Docker interaction.
+It will communicate with more than one Docker Daemon.
+It can use Docker API and can send command (docker run) to Docker Daemon (dockerd) which carries them out.
+● Docker Daemon (dockerd)
+It is consists of images, containers, volumes and responsible for all container-related actions.
+It can pull and create the container images as what the client requests.
+A Daemon will communicate with other daemons for its service management.
+● Docker Image
+Contains OS (very small) (almost negligible) + softwares.
+It is a lightweight, standalone, executable package of Docker stored in a Docker Registry.
+It can be used for creating a container. It will consist of everything required to run an application-code, a runtime, system libraries, system tools, environment variables, configuring files and settings.
+● Docker Container
+Container like a machine which is created from Docker image.
+It is a standardized unit of software used for deploying a particular application or environment.
+● Dockerfile
+Describes steps to create a docker image.
+● Docker Hub/Registry
+Stores all docker images publicly.
+It is versioning, storage, and distribution system for Docker images.
+It allows Docker users to pull images locally, and push new images to the registry.
 
 (44) What are the ways through which we can create docker images ?
 We can take any type of docker image directly from docker hub being provided by docker company and docker community.

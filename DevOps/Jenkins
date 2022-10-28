@@ -143,3 +143,9 @@ Test: Test in all environments whether application is working properly or not.
 Archived: Stored in an artifactory so that in future we may use/deliver again.
 Deliver: Handing the product to Client.
 Deploy: Installing product in client’s machines.
+
+(48) How many types of configurations in Jenkins ?
+There are total 3 types of configurations in Jenkins.
+● Global
+● Job
+● Node

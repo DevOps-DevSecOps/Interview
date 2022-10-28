@@ -3,9 +3,14 @@
 (2) What is Liveness Probes, Readiness Probes, Startup Probes ?
 
 (3) What are the types of Services in Kubernetes ?
-ClusterIP - It restricting the service within the cluster. It expose the service within the Kubernetes cluster. 
-NodePort - It will expose the service on a static port on the deployment node. A ClusterIP service to which NodePort service will route is automatically created. The service can be accessed from outside the cluster using the NodeIP:NodePort.
-LoadBalancer - It use cloud providers load balancer.
+● ClusterIP 
+It restricting the service within the cluster. It expose the service within the Kubernetes cluster.
+It is the default Kubernetes service that provides a service inside a cluster (with no external access) that other apps inside your cluster can access.
+● NodePort
+It will expose the service on a static port on the deployment node. A ClusterIP service to which NodePort service will route is automatically created. The service can be accessed from outside the cluster using the NodeIP:NodePort.
+● LoadBalancer
+It use cloud providers load balancer.
+● ExternalName
 
 (4) What is Multi-Containers Pod & Pod can have Multi-Containers ?
 
@@ -14,6 +19,9 @@ LoadBalancer - It use cloud providers load balancer.
 (6) Can we deploy a Pod on a particular node ?
 
 (7) What is Init Container and Side-Car Container ?
+● Side-Car
+It is a utility container that is used to extend support for a main container in a Pod. 
+An example would be using a sidecar container specifically to process system logs or for monitoring.
 
 (8) What is the link between Pod and Service ?
 
@@ -160,8 +168,26 @@ The types of Kubernetes Volume are: EmptyDir, GCE persistent disk, Flocker, Host
 (51) What is ContainerCreating pod ?
 It is one that can be scheduled on a node but can’t start up properly.
 
-(52) What is minikube ?
-It runs on the single nodes that are inside VM on a computer. This tool is also used by programmers who are developing an application using 
-Kubernetes.
+(52) What is Minikube ?
+It runs on the single nodes that are inside VM on a computer. 
+This tool is also used by programmers who are developing an application using Kubernetes.
+This runs a single-node Kubernetes cluster inside a virtual machine.
 
-(53)
+(53) Can we use many claims out of a persistent volume ?
+The mapping between persistentVolume and persistentVolumeClaim is always one to one.
+Even when delete the claim, PersistentVolume still remains as we set persistentVolumeReclaimPolicy is set to Retain and It will not be reused by any other claims.
+
+(54) What is kube-scheduler ?
+
+(55) What is kubectl ?
+It is the platform using which you can pass commands to the cluster.
+It basically provides the CLI to run commands against the Kubernetes cluster with various ways to create and manage the Kubernetes component.
+
+(56) What is the difference between Daemonset, Deployment, ReplicationController ?
+● Daemonset
+It ensures that all nodes you select are running exactly one copy of a pod.
+● Deployment
+It manages the scheduling and lifecycle of pods.
+It provides several key features for managing pods, including pod health checks, rolling updates of pods, the ability to roll back, and the ability to easily scale pods horizontally.
+● ReplicationController
+It specifies how many exact copies of a pod should be running in a cluster.

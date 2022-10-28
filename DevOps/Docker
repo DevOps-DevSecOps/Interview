@@ -8,7 +8,8 @@ Volumes
 Build Images
 
 (2) What is a Dockerfile and Dockerfile Multi-Stage ?
-Dockerfile - DockerFile is a text document which is used to assemble a Docker image.
+Dockerfile - Dockerfile is a set of instructions. 
+             DockerFile is a text document which is used to assemble a Docker image.
 
 (3) What is a Docker Image and Docker Container ?
 Docker Image - is light weight OS provided.
@@ -77,6 +78,7 @@ Managers & Workers.
 (18) Can we have multiple CMD and ENTRYPOINT in Dockerfile ?
 
 (19) What is a Docker Volumes ?
+It stores in "/var/lib/docker/volumes".
 
 (20) What is a Docker Network ?
 

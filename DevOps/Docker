@@ -183,4 +183,9 @@ We can create our own docker images form our own docker containers. I.e. we crea
 latest, So version:latest tag.
 
 (46) What are different States of a Docker Container ?
-Up, Restarting, Created, Exited.
+Running, Paused, Restarting, Exited.
+
+(47) How many containers can run per host ?
+Depending on the environment where Docker hosts the containers, there will be as many containers as the environment will support.
+The application size, available resources such as CPU, memory will decide on the number of containers which will run on an environment.
+Though containers will create newer CPU on their own but they will definitely provide efficient ways of utilizing the resources.

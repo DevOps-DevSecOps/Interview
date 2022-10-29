@@ -96,8 +96,8 @@ WAR (Web Application Archive) - These files have the '.war' extension.
                                 The web application that is to be deployed on servlet or JSP container is too converted into '.war' file.
                                 It can be deployed using Tomcat. 
                                 The '.war' file can have .jsp, html, .js and any other files which would necessary for a web application.
-EAR (Enterprise Archive) - The file merges JAR and WAR files into a single archive. 
-                           These files with the '. ear' extension have a directory for metadata.
+EAR (Enterprise Application Archive) - The file merges JAR and WAR files into a single archive. 
+                                       These files with the '. ear' extension have a directory for metadata.
 
 (40) Which Application Server will support EAR file ?
 An EAR file can be deployed to a Java EE application server such as WebSphere, WebLogic, JBoss.

@@ -6,7 +6,7 @@ Master (Branch) - Production (Environment).
 Development (Branch) - Staging OR Pre-Prod (Environment). 
                        Staging OR Pre-Prod Code.
 Feature (Branch) - This Feature branch created from Development branch. 
-                   To implement new features for application then create pull request to merge into Development branch that particular Feature branch will be deleted.
+                   To implement new features for application then create pull request to merge into Development branch after that particular Feature branch will be deleted.
 Release (Branch) - This Release branch created from Development branch.
                    To support preparation of new production releases.
                    Then Release Branch merged into Development Branch and Master Branch.

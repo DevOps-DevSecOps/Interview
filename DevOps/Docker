@@ -87,6 +87,8 @@ It stores in "/var/lib/docker/volumes".
 (22) How do copy a file from local to running Container ?
 
 (23) How to check IP_Address of a Docker Container ?
+docker inspect CONTAINER_ID
+docker inspect CONTAINER_NAME
 
 (24) If exit from a Docker Container the data will lost OR there ?  
 No, won’t lose any data when Docker container exits, until explicitly delete the container.

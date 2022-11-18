@@ -40,6 +40,7 @@ Docker Registry - Registry server is our own docker hub created to store private
 Is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster. It is a container orchestration tool, to manage multiple containers deployed across multiple host machines. 
 
 (7) What is a Docker Compose ?
+It is used to run multiple containers as a single service in same host machine.
 
 (8) What is a .dockerignore file ?
 

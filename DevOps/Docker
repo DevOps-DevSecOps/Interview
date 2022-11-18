@@ -12,9 +12,9 @@ Dockerfile - Dockerfile is a set of instructions.
              DockerFile is a text document which is used to assemble a Docker image.
 
 (3) What is a Docker Image and Docker Container ?
-Docker Image - is light weight OS provided.
+Docker Image - It is light weight OS provided.
 			   We can get any type of docker image form docker hub. 
-			   We use these docker images to create docker containers.
+               We use these docker images to create docker containers.
 Docker Container - A Docker Container will be created by running any specific Docker image.
 
 (4) What is a Docker ?
@@ -88,7 +88,9 @@ It stores in "/var/lib/docker/volumes".
 
 (23) How to check IP_Address of a Docker Container ?
 docker inspect CONTAINER_ID
+docker inspect CONTAINER_ID | grep "IPAddress"
 docker inspect CONTAINER_NAME
+docker inspect CONTAINER_NAME | grep "IPAddress"
 
 (24) If exit from a Docker Container the data will lost OR there ?  
 No, won’t lose any data when Docker container exits, until explicitly delete the container.

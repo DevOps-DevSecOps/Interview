@@ -74,3 +74,7 @@ G - groupId, A - artifactId, V - version
 <groupId>org.apache.maven.plugins</groupId>
 <artifactId>maven-assembly-plugin</artifactId>
 <version>3.3.0</version>
+
+(14) What are the things need to set if want download dependency from private repository ?
+All the dependencies plugin will downloaded from Public Central Repository (repo.maven.apache.org) to Local Repository (.m2) that very 1st time while executing a maven command.
+The dependencies plugin will downloaded from Public Central Repository (repo.maven.apache.org) that stores in to Local Repository (.m2) folder.

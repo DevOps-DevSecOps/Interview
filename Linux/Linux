@@ -178,3 +178,5 @@ export variable
 
 (29) Write the command which will print numbers from 0 to 100 and display every third (0 3 6 9 …) ?
 for i in {0..100..3}; do echo $i; done (OR) for (( i=0; i<=100; i=i+3 )); do echo "Welcome $i times"; done
+
+(30) What is Kernel ?

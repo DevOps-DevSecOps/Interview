@@ -34,6 +34,7 @@ deploy - done in the build environment, copies the final package to the remote r
 (7) What are the settings you need to do in pom.xml for running mvn deploy ?
 
 (8) .m2 folder is a local repository for maven, now I don’t want to use .m2 folder as local repository I want to use some other folder as local repository ?
+    How to set custom repository instead using .m2 local repository ?
 Yes, can do it in 2 ways
 Command: mvn clean install -Dmaven.repo.local=PATH_with_DIRECTORY_NAME 
 In ${user.home}/.m2/settings.xml (/home/ubuntu/.m2/settings.xml) can change the path

@@ -47,6 +47,7 @@ In ${user.home}/.m2/settings.xml (/home/ubuntu/.m2/settings.xml) can change the 
 localRepository: This value is the path of this build system’s local repository. The default value is ${user.home}/.m2/repository. This element is especially useful for a main build server allowing all logged-in users to build from a common local repository.
 
 (9) In which tag we will mention artifact outputs like jar, war, OR some any other in pom.xml ?
+    What is the default value of Packaging tag ? What other values for other artifact types ?
 In pom.xml, Have to mention the war packaging tag like <packaging>war</packaging> and for jar packaging tag is not necessary to mention because it’s a default as jar. 
 # Example - JAR
 <groupId>com.mycompany.app</groupId>

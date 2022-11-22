@@ -97,6 +97,7 @@ docker inspect CONTAINER_NAME | grep "IPAddress"
 No, won’t lose any data when Docker container exits, until explicitly delete the container.
 
 (25) What is -p and -P in docker run ?
+	 How to expose Docker Container publicly ?
 --publish , -p = Publish a containers ports to the host.
 --publish-all , -P = Publish all exposed ports to random ports.
 
@@ -198,3 +199,5 @@ Though containers will create newer CPU on their own but they will definitely pr
 (48) How to increase Docker Volume size ?
 https://stackoverflow.com/questions/30994760/how-to-increase-docker-container-default-size
 https://forums.docker.com/t/increase-container-volume-disk-size/1652
+
+(49)

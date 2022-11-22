@@ -194,3 +194,7 @@ Running, Paused, Restarting, Exited.
 Depending on the environment where Docker hosts the containers, there will be as many containers as the environment will support.
 The application size, available resources such as CPU, memory will decide on the number of containers which will run on an environment.
 Though containers will create newer CPU on their own but they will definitely provide efficient ways of utilizing the resources.
+
+(48) How to increase Docker Volume size ?
+https://stackoverflow.com/questions/30994760/how-to-increase-docker-container-default-size
+https://forums.docker.com/t/increase-container-volume-disk-size/1652

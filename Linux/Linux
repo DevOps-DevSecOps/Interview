@@ -180,3 +180,9 @@ export variable
 for i in {0..100..3}; do echo $i; done (OR) for (( i=0; i<=100; i=i+3 )); do echo "Welcome $i times"; done
 
 (30) What is Kernel ?
+Kernel is the core part of an OS(Operating system); hence it has full control over everything in the system. 
+Each operation of hardware and software is managed and administrated by the kernel.
+It acts as a bridge between applications and data processing done at the hardware level. It is the central component of an OS.
+It is the part of the OS that always resides in computer memory and enables the communication between software and hardware components.
+Kernel widely used operating systems are Windows, Linux, MacOS, Android, iOS, ... etc.
+Software (User Level Application) <----------> Kernel <----------> Hardware (Disks, Devices, Memory, Processor-CPU)

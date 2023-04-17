@@ -74,7 +74,7 @@ Download particular Plugin with previous Version from Official Website https://p
 
 (34) How to Pull Request (PR) like merge two branches using Jenkins ?
 Freestyle / Maven - in ‘Post-build Actions’ -> using option ‘Git Publisher’. 
-Multibranch Pipeline (Branches and Pull Requests) - using Plugins like GitHub Branch Source, Bitbucket Branch Source, GitLab Branch Source. 
+Multibranch Pipeline (Branches and Pull Requests) - using Plugins like GitHub Branch Source, Bitbucket Branch Source, GitLab Branch Source, AWS CodeCommit Jobs. 
 
 (35) What is post section in Jenkins Pipeline ?
 

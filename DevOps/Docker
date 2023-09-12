@@ -32,12 +32,13 @@ Automated Build - can use to create new Images by making changes to SCM Reposito
 Webhooks - we can trigger actions that can create and build new images by pushing a change to repository.
 Integration - can integration with GitHub/Bitbucket.    
 Docker Registry - Registry server is our own docker hub created to store private docker images instead of storing in public Docker hub.
-				  Registry server is one of the docker containers. 
-				  We create this Registry server from “registry” image, especially provided by docker to create private docker hub.
-				  We can store any no of private docker images in this Registry server.
+                  Registry server is one of the docker containers. 
+                  We create this Registry server from “registry” image, especially provided by docker to create private docker hub.
+                  We can store any no of private docker images in this Registry server.
 				  
 (6) What is a Docker Swarm ?
-Is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster. It is a container orchestration tool, to manage multiple containers deployed across multiple host machines. 
+Is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster. 
+It is a container orchestration tool, to manage multiple containers deployed across multiple host machines. 
 
 (7) What is a Docker Compose ?
 It is used to run multiple containers as a single service in same host machine.

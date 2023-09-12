@@ -183,11 +183,15 @@ Even when delete the claim, PersistentVolume still remains as we set persistentV
 It is the platform using which you can pass commands to the cluster.
 It basically provides the CLI to run commands against the Kubernetes cluster with various ways to create and manage the Kubernetes component.
 
-(56) What is the difference between Daemonset, Deployment, ReplicationController ?
-● Daemonset
+(56) What is the difference between DaemonSet, Deployment, ReplicationController ?
+● DaemonSet
 It ensures that all nodes you select are running exactly one copy of a pod.
 ● Deployment
 It manages the scheduling and lifecycle of pods.
 It provides several key features for managing pods, including pod health checks, rolling updates of pods, the ability to roll back, and the ability to easily scale pods horizontally.
 ● ReplicationController
 It specifies how many exact copies of a pod should be running in a cluster.
+
+(57) Is there any Kubernetes and Docker are related ?
+
+(58) What is Kube-Schedular ?

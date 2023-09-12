@@ -78,7 +78,7 @@ Managers & Workers.
 
 (18) Can we have multiple CMD and ENTRYPOINT in Dockerfile ?
 
-(19) What is a Docker Volumes ?
+(19) What is a Docker Volumes & Why Volumes used in Docker ?
 It stores in "/var/lib/docker/volumes".
 
 (20) What is a Docker Network ?
@@ -94,7 +94,8 @@ docker inspect CONTAINER_NAME
 docker inspect CONTAINER_NAME | grep "IPAddress"
 
 (24) If exit from a Docker Container the data will lost OR there ?  
-No, won’t lose any data when Docker container exits, until explicitly delete the container.
+No, won’t lose any data when Docker container exits, until explicitly delete the container. 
+Alternatively to save the Docker Container by using docker commit command. 
 
 (25) What is -p and -P in docker run ?
 	 How to expose Docker Container publicly ?
@@ -200,4 +201,6 @@ Though containers will create newer CPU on their own but they will definitely pr
 https://stackoverflow.com/questions/30994760/how-to-increase-docker-container-default-size
 https://forums.docker.com/t/increase-container-volume-disk-size/1652
 
-(49)
+(49) How will monitor a Docker container ?
+
+(50)

@@ -13,7 +13,7 @@ Dockerfile - Dockerfile is a set of instructions.
 
 (3) What is a Docker Image and Docker Container ?
 Docker Image - It is light weight OS provided.
-			   We can get any type of docker image form docker hub. 
+               We can get any type of docker image form docker hub. 
                We use these docker images to create docker containers.
 Docker Container - A Docker Container will be created by running any specific Docker image.
 

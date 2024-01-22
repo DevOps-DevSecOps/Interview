@@ -84,7 +84,7 @@ Labels - used to integrate with internal purpose inside a cluster.
 Yes, HPA.
 
 (26) Pod is in pending state what might be the reason ?
-Schedular, Taints and Tolerations, Affinity and Anti-Affinity, insufficient ResourceQuota (CPU & Memory).
+Schedular, Node Selector, Taints and Tolerations, Affinity and Anti-Affinity, insufficient ResourceQuota (CPU & Memory).
 
 (27) Can have multiple Init Containers ?
 Yes.

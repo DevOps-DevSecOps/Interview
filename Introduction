@@ -1,8 +1,38 @@
 [Yourself]
 I'm ArunTheja.
 I'm having 4+ years of experience on DevOps and AWS Cloud.
-Past 4+ years I have been working in COMPANY_NAME as DevOps Engineer.
+Curretly i am working in COMPANY_NAME as DevOps Engineer.
 I have completed my graduation from JNTU at Anatapur.
+As part of my role, i am responsible to setup and manage DevOps CI/CD Pipelines.
+I have used various DevOps tools like 
+● Git as Version Control Systems (VCS)
+Enable branch strategies like DEV, QA, STAGING, PRODUCTION.
+Managing git repositories using various Git commands.
+● Jenkins as Continuous integration (CI)
+Setting Jenkins Server.
+Master & Slave configurations.
+Managing CI/CD jobs.
+Managing Jenkins Plugins. 
+● Maven, Node Package Manager (NPM) as Build Tools
+● SonarQube as Code Analysis
+● Nexus as Artifact Repository
+Setting up a private Docker Registry.
+● Ansible as Continuous Deployment (CD) & Configuration Management
+Setting up Ansible Control Server.
+Writing a Playbooks & Roles.
+Managing a hosts files.
+● Packer as
+● Terraform as
+● Trivy as
+● Docker as Containerization
+Writing a Dockerfile.
+Creating & Managing a Containers.
+● Kubernetes (K8s) as Container Orchestration
+Setting up a Kubernetes environment on AWS Cloud.
+Writing a manifest YAML files.
+● Helm as
+● Argo CD as
+The DevOps environment is running on AWS Cloud which was setup by me according to our DevOps Architect plan. 
 
 [Day To Day Activities]
 * Checking Emails.

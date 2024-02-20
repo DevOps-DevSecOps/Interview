@@ -15,7 +15,9 @@ $JOB_NAME, $BUILD_NUMBER, $JOB_URL
 
 (8) What are the types of jobs OR projects in Jenkins ?
 
-(9) What is the difference between Continuous Delivery and Continuous Deployment ?
+(9) What is the difference between Continuous Delivery (CD) and Continuous Deployment (CD) ?
+Continuous Delivery (CD) - A manual step is required to deploy the application.
+Continuous Deployment (CD) - Everything is automated, no manual effort needed.
 
 (10) What is a Jenkinsfile ?
 
